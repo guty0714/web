@@ -1,460 +1,243 @@
-:root {
-  --oc-blue: #0862c5; /* azul profundo más parecido al del banco */
-  --oc-blue-dark: #0053b8;
+:root { --oc-blue:#0862c5; --oc-blue-dark:#0053b8; }
+
+/* Base */
+body{ font-feature-settings:"ss01" on; font-family:'Open Sans', Arial, sans-serif; font-weight:500; }
+.btn-primary{ background-color:var(--oc-blue)!important; border-color:var(--oc-blue)!important; }
+.btn-primary:hover,.btn-primary:focus{ background-color:var(--oc-blue-dark)!important; border-color:var(--oc-blue-dark)!important; }
+
+/* Top tabs */
+.bg-primary{ --topbar-h:44px; background-color:var(--oc-blue)!important; }
+.bg-primary i{ font-size:.85rem!important; position:relative; top:-.5px; margin-right:.25rem; }
+.bg-primary .container{ height:var(--topbar-h); padding-top:0!important; padding-bottom:0!important; display:flex; align-items:stretch; }
+.bg-primary .container>a{ display:flex; align-items:center; height:100%; padding:0 16px; text-decoration:none; }
+.active-tab{ position:relative; background:#fff; color:var(--oc-blue)!important; padding:8px 18px; border-radius:8px 8px 0 0; font-weight:600; box-shadow:inset 0 -2px 0 #fff; }
+.active-tab::after{ display:none; }
+.text-white-50{ color:rgba(255,255,255,.7)!important; }
+.text-white-50:hover{ color:#fff!important; }
+.bg-primary .ms-auto a i{ margin-right:.35rem; font-size:1rem; position:relative; top:.5px; }
+.bg-primary .ms-auto a{ color:rgba(255,255,255,.92)!important; }
+.bg-primary .ms-auto a:hover{ color:#fff!important; }
+.container.d-flex.gap-3.py-1.fw-semibold a{ letter-spacing:.2px; font-size:.90rem; }
+
+/* Navbar */
+.navbar .navbar-nav{ margin-left:0; margin-right:0; }
+.navbar .nav-link{ font-size:.95rem; padding-inline:1.3rem; font-weight:500; }
+.navbar .btn-primary{ padding:.55rem 1.9rem; font-size:.95rem; border-radius:999px; display:flex; align-items:center; gap:.35rem; }
+.navbar .btn-primary i{ font-size:1.15rem; position:relative; top:-1px; }
+.navbar-brand img{ max-height:56px; height:auto; }
+
+/* Subnavbar */
+.subnavbar{ background:#fff; height:49px; display:flex; align-items:center; }
+.subnavbar .container{ max-width:1140px; }
+.subnav-link{ color:#212529; text-decoration:none; font-size:1.05rem; font-weight:600; padding:.25rem 0; transition:color .2s; }
+.subnav-link:hover{ color:var(--oc-blue); }
+
+/* Hero */
+.hero-card{ background:linear-gradient(135deg,#e8f1ff,#cfe6ff); min-height:22rem; position:relative; overflow:hidden; padding-right:46%!important; }
+.hero-card .hero-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; max-width:none; filter:drop-shadow(0 1rem 1.25rem rgba(0,0,0,.15)); border-top-right-radius:inherit; border-bottom-right-radius:inherit; z-index:0; pointer-events:none; }
+.hero-card>*:not(img){ position:relative; z-index:1; }
+.hero-card.hero--cover .hero-content{ max-width:22rem; }
+@media (min-width:576px){ .hero-card.hero--cover .hero-content{ max-width:26rem; } }
+@media (min-width:992px){ .hero-card.hero--cover .hero-content{ max-width:30rem; } }
+.hero-card.hero--cover h2{ font-weight:800; letter-spacing:-.2px; line-height:1.15; font-size:clamp(1.5rem,5.2vw,2.25rem); }
+.hero-card.hero--cover p{ font-size:clamp(.95rem,2.8vw,1rem); line-height:1.35; }
+.hero--cover::after{ content:""; position:absolute; inset:0; pointer-events:none; z-index:1; background:linear-gradient(90deg, rgba(0,0,0,.50) 0%, rgba(0,0,0,.22) 35%, rgba(0,0,0,.08) 65%, rgba(0,0,0,0) 100%); }
+.carousel-item:nth-child(1) .hero-img{ object-position:65% center; }
+.hero--visa .hero-img{ object-position:72% center; }
+
+#heroCarousel, #heroCarousel .carousel-inner, #heroCarousel .carousel-item{ height:100%; }
+#heroCarousel .carousel-control-prev, #heroCarousel .carousel-control-next{ width:4rem; color:#000; opacity:.8; }
+#heroCarousel .carousel-control-prev-icon, #heroCarousel .carousel-control-next-icon{ background-color:rgba(0,0,0,.5); border-radius:50%; }
+#heroCarousel .hero-card{ transition:transform .6s ease-in-out; }
+
+/* Occiauto */
+.card.bg-dark.text-white.position-relative.overflow-hidden>img.position-absolute.end-0.bottom-0{
+  left:0; top:0; width:100%!important; height:100%; object-fit:cover; padding:0!important; opacity:1; z-index:0; pointer-events:none;
+}
+.card.bg-dark.text-white.position-relative.overflow-hidden::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(15,35,60,.9) 0%, rgba(20,45,80,.6) 35%, rgba(35,70,110,.3) 70%, rgba(40,80,120,0) 100%);
+  z-index:1; pointer-events:none;
+}
+.card.bg-dark.text-white.position-relative.overflow-hidden .card-body{ position:relative; z-index:2; }
+.occiauto-card .card-body{ display:flex; flex-direction:column; justify-content:flex-end; padding:4rem 2.5rem 1.4rem; max-width:95%; margin:0 auto; }
+.occiauto-card h3{ font-size:1.6rem; line-height:1.2; margin-bottom:1.5rem; }
+.occiauto-card p{ margin-bottom:1.8rem; }
+.occiauto-card>img{ filter:brightness(.62) saturate(.95); }
+
+/* ====== TARJETAS DE PRODUCTO (estilo “primera imagen”) ====== */
+/* ==== PRODUCT CARD — layout apilado, centrado ==== */
+
+/* Caja: no necesitamos gran padding inferior si la imagen deja de ser absoluta */
+.product-card{
+  padding: 1.3rem 1.25rem 1.25rem !important;
+  display: block !important;
 }
 
-body {
-  font-feature-settings: "ss01" on;
+/* Contenido centrado y a ancho completo */
+.product-card .card-body{
+  max-width: 100% !important;
+  text-align: center !important;
+  padding: 1rem 0 1.2rem !important;
 }
 
-/* Tabs de arriba */
-.active-tab {
-  position: relative;
-  background-color: white;
-  color: var(--oc-blue) !important;
-  padding: 8px 18px;
-  border-radius: 0.25rem 0.25rem 0 0; /* bordes suaves arriba */
-  font-weight: 600;
+/* La imagen VA DEBAJO del contenido: deja de ser absoluta */
+.product-card .product-img{
+  position: static !important;      /* quita absolute */
+  inset: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  display: block !important;
+  width: 68% !important;            /* tamaño cómodo */
+  max-width: 360px !important;
+  height: auto !important;
+  margin: 0.25rem auto 0 !important;/* centrada */
+  object-fit: contain !important;
+  z-index: 1 !important;            /* por debajo del texto, pero ya no se superpone */
+  filter: drop-shadow(0 10px 16px rgba(0,0,0,.10));
 }
 
-.btn-primary {
-  background-color: var(--oc-blue) !important;
-  border-color: var(--oc-blue) !important;
+/* Tipos y botón similares a la referencia */
+.product-card h3{
+  font-weight: 800 !important;
+  font-size: clamp(1.05rem, 2.6vw, 1.25rem) !important;
+  margin: 0.25rem 0 0.5rem !important;
+}
+.product-card p{
+  margin: 0 0 1rem !important;
+  color: #5b6675 !important;
+}
+.product-card .btn{
+  border: 2px solid #1560ff !important;
+  color: #1560ff !important;
+  border-radius: 999px !important;
+  padding: 0.6rem 1.2rem !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+.product-card .btn:hover{
+  background: #1560ff !important;
+  color: #fff !important;
 }
 
-/* Hover un pelín más oscuro */
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: var(--oc-blue-dark) !important;
-  border-color: var(--oc-blue-dark) !important;
+/* Badge más parecido */
+.product-card .badge{
+  display: inline-block !important;
+  background: #87b9e2 !important;
+  color: #1670c9 !important;
+  border-radius: 999px !important;
+  padding: .35rem .9rem !important;
+  font-weight: 700 !important;
 }
 
-/* eliminamos el triángulo blanco inferior */
-.active-tab::after {
-  display: none;
+/* Ajustes finos en móviles: imagen un poco más grande */
+@media (max-width: 420px){
+  .product-card .product-img{ width: 74% !important; }
 }
 
-/* === Top bar: altura fija y centrado vertical === */
-.bg-primary{
-  --topbar-h: 44px;                           /* alto del header */
-  background-color: var(--oc-blue) !important;
+/* Productos — tabs carrusel */
+.tabs-wrap{ position:relative; border-bottom:1px solid #e6eaf2; overflow-x:auto; white-space:nowrap; scroll-snap-type:x proximity; }
+.product-tabs{ flex-wrap:nowrap!important; gap:1.75rem; padding:.25rem .75rem; width:max-content; }
+.product-tabs .nav-link{ background:transparent; border-radius:0; padding:.45rem 0; font-weight:600; font-size:1.02rem; color:#222; }
+.product-tabs .nav-link:hover{ color:#0d6efd; }
+.product-tabs .nav-link.active{ color:#0d6efd; }
+
+/* Indicador único */
+.tabs-indicator{ position:absolute; left:0; bottom:0; width:0; height:3px; background:#0d6efd; border-radius:3px; transition:left .28s ease, width .28s ease; }
+
+/* En ≥ md reparte y normalmente sin scroll */
+@media (min-width:768px){
+  .tabs-wrap{ overflow-x:hidden; }
+  .product-tabs{ width:100%; justify-content:space-between; gap:0; padding-inline:0; }
 }
 
-/* Tamaño más pequeño y alineación más precisa para los íconos */
-.bg-primary i {
-  font-size: 0.85rem !important;   /* antes 1rem */
-  position: relative;
-  top: -0.5px;                     /* corrige leve desalineación vertical */
-  margin-right: 0.25rem;           /* deja un pequeño espacio del texto */
+/* Sección productos */
+#productos{ background:#fff; padding-top:4rem; padding-bottom:5rem; }
+#productos h2.display-6{ font-size:2rem; font-weight:900; letter-spacing:.01em; margin-bottom:3rem; }
+
+/* Bre-B / Footer */
+.breb-banner{ background:url('https://picsum.photos/seed/breb/1200/500') center/cover no-repeat, linear-gradient(90deg,#111,#333); }
+.footer{ background:#2f3134; color:#fff; }
+.footer a{ text-decoration:none; color:rgba(255,255,255,.92); }
+.footer a:hover{ color:#fff; }
+.rounded-4{ border-radius:1rem; }
+
+/* Responsive ajustes */
+@media (max-width:575.98px){
+  .navbar .btn-primary{ padding:.5rem 1.2rem; font-size:.9rem; }
+  .container.d-flex.gap-3.py-1.fw-semibold a{ font-size:.84rem; letter-spacing:0; padding:0 10px; }
+  .hero--cover::after{ background:linear-gradient(90deg, rgba(0,0,0,.38) 0%, rgba(0,0,0,.18) 35%, rgba(0,0,0,.04) 65%, rgba(0,0,0,0) 100%); }
+  .hero-card h2{ font-size:clamp(1.6rem,6vw,2rem); line-height:1.15; letter-spacing:-.2px; }
+  .carousel-item:nth-child(1) .hero-img{ object-position:78% center; }
+  .hero--visa .hero-img{ object-position:70% center; }
+}
+@media (max-width:767.98px){
+  .subnavbar{ height:auto; }
+  .subnavbar .container{ overflow-x:auto; white-space:nowrap; gap:1.25rem; padding:0 1rem; }
+  .subnav-link{ display:inline-block; padding:.35rem .1rem; font-size:.98rem; }
+}
+/* === Quitar fondo azul y anillo de foco en tabs === */
+
+/* Si usas el contenedor con CLASE .product-tabs (tu barra de arriba) */
+.product-tabs .nav-link,
+.product-tabs .nav-link.active {
+  background-color: transparent !important; /* sin “bloque” azul */
 }
 
-.bg-primary .container{
-  height: var(--topbar-h);
-  padding-top: 0 !important;                  /* anula py-1 del HTML */
-  padding-bottom: 0 !important;
-  display: flex;
-  align-items: stretch;                        /* estira los hijos al 100% */
+/* Si usas el contenedor con ID #productTabs (la sección Productos) */
+#productTabs .nav-link,
+#productTabs .nav-link.active {
+  background-color: transparent !important; /* sin “bloque” azul */
 }
 
-/* Enlaces del top bar ocupan toda la altura y centran el texto */
-.bg-primary .container > a{
-  display: flex;
-  align-items: center;                         /* centra verticalmente */
-  height: 100%;                                /* llena el alto del header */
-  padding: 0 16px;                             /* solo ancho */
-  text-decoration: none;
-}
-
-/* Pestaña activa: fondo blanco a TODO el alto */
-.bg-primary .active-tab{
-  background: #fff;
-  color: var(--oc-blue) !important;
-  border-radius: 8px 8px 0 0;
+/* Quitar el halo de enfoque grueso (focus ring) */
+.product-tabs .nav-link:focus,
+.product-tabs .nav-link:focus-visible,
+#productTabs .nav-link:focus,
+#productTabs .nav-link:focus-visible {
+  outline: none;
   box-shadow: none;
 }
 
-/* Opcional: sutil línea blanca inferior como separador */
-.bg-primary .active-tab{ box-shadow: inset 0 -2px 0 #fff; }
+/* (Opcional, accesible) focus sutil como subrayado */
+#productTabs .nav-link:focus-visible,
+.product-tabs .nav-link:focus-visible {
+  box-shadow: inset 0 -2px 0 rgba(13,110,253,.55);
+}
+/* ===== Separación entre los tabs y el contenido ===== */
 
-/* Hover de links inactivos */
-.bg-primary .text-white-50:hover{ color:#fff !important; }
-
-/* Tabs inactivos */
-.text-white-50 {
-  color: rgba(255, 255, 255, 0.7) !important;
+/* Para el carril desplazable (tabs-wrap) */
+.tabs-wrap{
+  padding-bottom: .5rem !important;   /* espacio interno bajo la barra */
+  margin-bottom: 1rem !important;     /* aire antes del contenido */
 }
 
-.text-white-50:hover {
-  color: #fff !important;
+/* Si usas #productTabs sin .tabs-wrap (los tabs de la sección Productos) */
+#productTabs{
+  margin-bottom: 1rem !important;     /* aire consistente */
 }
 
-/* Fuente y peso similares al original */
-body, .bg-primary a {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 500; /* más ligero, menos "bold" */
+/* Empuja un poco el contenido de pestañas */
+.tab-content{
+  margin-top: .5rem !important;
 }
 
-/* Enlaces del bloque derecho (quienes somos, etc) */
-.bg-primary .ms-auto a i{ margin-right:.35rem; font-size:1rem; position:relative; top:.5px; }
-
-/* Ligero ajuste del color de texto */
-.bg-primary .ms-auto a {
-  color: rgba(255,255,255,0.92) !important;
+/* El indicador azul queda un pelín más arriba para no “tocar” la tarjeta */
+.tabs-indicator{
+  bottom: -4px !important;            /* antes -2px */
 }
-
-.bg-primary .ms-auto a:hover {
-  color: #fff !important;
-}
-
-/* Para mantener la franja visualmente centrada */
-.bg-primary .container {
-  align-items: center !important;
-}
-
-
-
-/* Para mantener consistencia visual con el header original */
-.container.d-flex.gap-3.py-1.fw-semibold a {
+.product-card .badge{
+  background: #EAF5FF !important;         /* azul muy claro */
+  color: #0A58CA !important;               /* azul del texto */
+  border: 1.5px solid #BFDFFF !important;  /* borde celestico */
+  border-radius: 999px !important;         /* pastilla */
+  padding: 0.42rem 0.95rem !important;     
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
   letter-spacing: 0.2px;
-  font-size: 0.90rem;
+  box-shadow: inset 0 0 0 2px rgba(10,88,202,0.06); /* sutil “resalte” */
+  line-height: 1;                           /* altura compacta */
 }
-
-/* Posición del menú: un poco más hacia la derecha */
-.navbar .navbar-nav {
-  margin-left: 15rem;   /* empuja todo el bloque hacia la derecha */
-  margin-right: auto;  /* mantiene el botón pegado a la derecha */
-}
-
-/* Tamaño de letra del menú (igual o muy parecido al original) */
-.navbar .nav-link {
-  font-size: 0.95rem;      /* más pequeño que el 1rem por defecto */
-  padding-inline: 1.3rem;  /* un poco menos de separación que 1.6rem */
-  font-weight: 500;
-}
-
-/* === Subnavbar inferior (Cuentas, Tarjeta de Crédito, etc.) === */
-.subnavbar {
-  background-color: #ffffff;
-  height: 49px;
-  display: flex;
-  align-items: center;
-}
-
-.subnavbar .container {
-  max-width: 1140px;
-}
-
-.subnav-link {
-  color: #212529;
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 600;  
-  padding: 0.25rem 0;
-  transition: color 0.2s ease-in-out;
-}
-
-.subnav-link:hover {
-  color: var(--oc-blue);
-}
-
-/* Botón Ingresar (navbar) más alto y centrado */
-.navbar .btn-primary{
-  padding: 0.55rem 1.9rem;   /* ↑ vertical, → horizontal  */
-  font-size: 0.95rem;
-  border-radius: 999px;      /* pastilla bien redonda */
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;              /* espacio entre icono y texto */
-}
-
-/* Icono dentro del botón Ingresar */
-.navbar .btn-primary i{
-  font-size: 1.15rem;        /* un poco más grande */
-  position: relative;
-  top: -1px;                 /* lo baja/centra visualmente */
-}
-
-/* Hero */
-/* --- HERO --- */
-.hero-card {
-  background: linear-gradient(135deg, #e8f1ff, #cfe6ff);
-  min-height: 22rem;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Imagen del panel izquierdo (Cuenta de Ahorros) */
-.hero-card .hero-img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  max-width: none;
-  object-fit: cover;
-  filter: drop-shadow(0 1rem 1.25rem rgba(0, 0, 0, 0.15));
-  border-top-right-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-
-/* ===== HERO IZQUIERDA – imagen a fondo sin tapar el texto ===== */
-.hero-card{
-  /* Reserva lateral para el texto (ajusta 42–50% a gusto) */
-  padding-right: 46% !important;
-}
-
-.hero-card .hero-img{
-  z-index: 0;                 /* por debajo del contenido */
-  pointer-events: none;       /* no bloquea clicks */
-}
-
-.hero-card > *:not(img){
-  position: relative;
-  z-index: 1;                 /* textos y botón por encima */
-}
-
-
-
-/* Imagen del panel derecho (OcciautO) */
-.card.bg-dark.text-white.position-relative.overflow-hidden
-  > img.position-absolute.end-0.bottom-0{
-  left: 0;                         /* además de right:0 y bottom:0 que ya tenía */
-  top: 0;
-  width: 100% !important;          /* ignora w-50 de Bootstrap */
-  height: 100%;
-  object-fit: cover;
-  padding: 0 !important;           /* ignora pe-3 pb-3 */
-  opacity: 1;                      /* la veladura la haremos con ::before */
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Capa de veladura/degradado (sin tocar HTML) */
-.card.bg-dark.text-white.position-relative.overflow-hidden::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      to top,
-      rgba(15, 35, 60, 0.9) 0%,      /* azul grisáceo oscuro en la base */
-      rgba(20, 45, 80, 0.6) 35%,     /* más suave hacia el centro */
-      rgba(35, 70, 110, 0.3) 70%,    /* muy leve arriba */
-      rgba(40, 80, 120, 0) 100%      /* totalmente transparente arriba */
-    );
-  z-index:1;
-  pointer-events:none;
-}
-    
-
-/* El texto encima del degradado */
-.card.bg-dark.text-white.position-relative.overflow-hidden .card-body{
-  position: relative;
-  z-index: 2;
-}
-
-/* Ajustes de layout para la tarjeta de Occiauto */
-.occiauto-card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;   /* empuja el contenido un poco hacia abajo */
-  padding: 4rem 2.5rem 3rem;   /* ↑ top, → lados, ↓ bottom (más aire arriba y abajo) */
-  max-width: 75%;
-  margin: 0 auto;
-}
-
-/* Título un poco más protagonista y con margen */
-.occiauto-card h3{
-  font-size: 1.6rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-
-/* Texto de párrafo con un poco más de espacio antes del link */
-.occiauto-card p{
-  margin-bottom: 1.8rem;
-}
-
-/* Limita el ancho del texto en la tarjeta Occiauto */
-.occiauto-card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;   /* empuja el contenido un poco hacia abajo */
-  padding: 4rem 2.5rem 1.4rem;   /* ↑ top, → lados, ↓ bottom (más aire arriba y abajo) */
-  max-width: 95%;
-  margin: 0 auto;
-}
-
-/* Corrige altura del carrusel */
-#heroCarousel,
-#heroCarousel .carousel-inner,
-#heroCarousel .carousel-item {
-  height: 100%;
-}
-
-/* Ajusta los botones del carrusel */
-#heroCarousel .carousel-control-prev,
-#heroCarousel .carousel-control-next {
-  width: 4rem;
-  color: #000;
-  opacity: 0.8;
-}
-
-#heroCarousel .carousel-control-prev-icon,
-#heroCarousel .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-}
-
-/* Armoniza el estilo entre slides */
-#heroCarousel .hero-card {
-  transition: transform 0.6s ease-in-out;
-}
-
-/* Evita que las imágenes se desborden */
-#heroCarousel .hero-img {
-  object-fit: cover;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-.product-card {
-  background: #f7fbff;                 /* antes #f4f8ff */
-  border: 1px solid #e2ecff;           /* borde más claro */
-  border-radius: 1.25rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-}
-
-
-/* Imagen del producto */
-.product-card .product-img {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  width: 45%;
-  height: auto;
-  object-fit: contain;
-}
-
-.product-card .card-body {
-  position: relative;
-  z-index: 1;
-  padding: 1.8rem 1rem 4rem;  /* top, lados, bottom */
-  max-width: 60%;              /* acorta el ancho del texto como en el original */
-}
-
-.product-card .badge {
-  background-color: #eaf7ff;  /* antes #dff4ff, demasiado saturado */
-  color: #0075c9;             /* azul más suave */
-  font-weight: 600;
-  border-radius: 999px;
-  padding: 0.3rem 1rem;
-  font-size: 0.85rem;
-}
-
-/* Título */
-.product-card h3 {
-  font-size: 1.3rem;
-  line-height: 1.3;
-  color: #111;
-}
-
-/* Descripción */
-.product-card p {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Botón */
-.product-card .btn {
-  border: 2px solid #0066ff;
-  color: #0066ff;
-  font-weight: 600;
-  padding: 0.6rem 1.6rem;
-  font-size: 1rem;
-  transition: all 0.3s;
-}
-
-.product-card .btn:hover {
-  background: #0066ff;
-  color: #fff;
-  border-color: #0066ff;
-}
-/* Contenedor de tabs */
-#productTabs {
-  display: flex;
-  justify-content: space-between;   /* separa los tabs, como el original */
-  width: 100%;                      /* ocupa todo el ancho del .container */
-  margin: 0 auto 2.8rem;            /* centrado y un poco más abajo del título */
-  border-bottom: 1px solid #e6eaf2; /* línea gris clara como la original */
-  padding-bottom: 0.65rem;
-}
-
-#productTabs .nav-link {
-  color: #222;
-  font-weight: 500;
-  font-size: 1.02rem;
-  border-radius: 0;
-  background: transparent;
-  padding: 0.4rem 0;                /* sin padding lateral, más “limpio” */
-  position: relative;
-  transition: color 0.2s ease;
-} 
-#productTabs .nav-link:hover {
-  color: #0056b3;
-}
-
-/* Tab activo */
-#productTabs .nav-link.active {
-  color: #0056b3;
-  font-weight: 600;
-}
-
-#productTabs .nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;                     /* se pega visualmente a la franja gris */
-  height: 3px;
-  background-color: #0056b3;
-  border-radius: 3px;
-}
-
-#productos {
-  background-color: #fff;
-  padding-top: 4rem;
-  padding-bottom: 5rem;
-}
-
-/* Título de la sección productos: más pequeño y similar al original */
-#productos h2.display-6 {
-  font-size: 2rem;         /* un pelín más pequeño */
-  font-weight: 900;
-  letter-spacing: 0.01em;
-  margin-bottom: 3rem;     /* más separación con los tabs */
-}
-
-/* Bre-B */
-.breb-banner{ background: url('https://picsum.photos/seed/breb/1200/500') center/cover no-repeat, linear-gradient(90deg,#111,#333); }
-
-/* Footer */
-.footer{ background:#2f3134; }
-.footer a{ text-decoration:none; }
-
-/* Utilidades pequeñas */
-.rounded-4{ border-radius:1rem; }
+.product-card { background: #EAF5FF !important; }  /* azul claro de la referencia */

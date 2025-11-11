@@ -25,110 +25,120 @@
     </div>
   </div>
 
-<!-- Navbar principal -->
-<nav class="navbar navbar-expand-lg bg-white border-bottom">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-      <img src="/img/bancodeoccidenteicon.png" class="rounded" alt="logo" width="250" height="90">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#cuentas">Canales digitales</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tarjetas">Segmentos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#creditos">Mesa de dinero</a></li>
-        <li class="nav-item"><a class="nav-link" href="#seguros">Haz tus pagos</a></li>
-      </ul>
-      <a class="btn btn-primary rounded-pill px-4 fw-semibold" href="#">
-        <i class="bi bi-person-circle me-1"></i>Ingresar
+  <!-- Navbar principal -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/img/bancodeoccidenteicon.png" class="rounded" alt="logo" width="250" height="90">
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#cuentas">Canales digitales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tarjetas">Segmentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#creditos">Mesa de dinero</a></li>
+          <li class="nav-item"><a class="nav-link" href="#seguros">Haz tus pagos</a></li>
+        </ul>
+        <a class="btn btn-primary rounded-pill px-4 fw-semibold" href="#">
+          <i class="bi bi-person-circle me-1"></i>Ingresar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Subnavbar inferior (no es el carrusel de productos) -->
+  <div class="subnavbar border-bottom">
+    <div class="container d-flex justify-content-between text-center fw-semibold">
+      <a href="#" class="subnav-link">Cuentas</a>
+      <a href="#" class="subnav-link">Tarjeta de Crédito</a>
+      <a href="#" class="subnav-link">Créditos</a>
+      <a href="#" class="subnav-link">Seguros</a>
+      <a href="#" class="subnav-link">Inversión</a>
+      <a href="#" class="subnav-link">Solicitar en línea</a>
     </div>
   </div>
-</nav>
 
-<!-- 👇 Aquí agregas la nueva franja -->
-<div class="subnavbar border-bottom">
-  <div class="container d-flex justify-content-between text-center fw-semibold">
-    <a href="#" class="subnav-link">Cuentas</a>
-    <a href="#" class="subnav-link">Tarjeta de Crédito</a>
-    <a href="#" class="subnav-link">Créditos</a>
-    <a href="#" class="subnav-link">Seguros</a>
-    <a href="#" class="subnav-link">Inversión</a>
-    <a href="#" class="subnav-link">Solicitar en línea</a>
-  </div>
-</div>
-<!-- Hero: dos paneles -->
-<section class="py-4 bg-light border-bottom">
-  <div class="container">
-    <div class="row g-4 align-items-stretch">
-      <!-- Panel izquierdo: Carrusel -->
-      <div class="col-lg-8">
-        <div id="heroCarousel" class="carousel slide h-100" >
-          <div class="carousel-inner h-100">
-            <!-- Slide 1 -->
-            <div class="carousel-item active h-100">
-              <div class="hero-card h-100 p-4 p-md-5 rounded-4 position-relative overflow-hidden">
-                <span class="badge text-bg-light mb-2">Cuenta de Ahorros</span>
-                <h2 class="display-6 fw-bold mb-2">Duplica tu saldo<br>hasta 10 millones*</h2>
-                <p class="text-secondary mb-4">Abre tu Cuenta de Ahorros y participa.</p>
-                <a href="#" class="btn btn-primary btn-lg rounded-pill">¡Abre tu Cuenta aquí!</a>
-                <img class="hero-img d-none d-md-block" src="/img/VISACOL.png" alt="ahorros">
+  <!-- Hero -->
+  <section class="py-4 bg-light border-bottom">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <!-- Carrusel -->
+        <div class="col-lg-8">
+          <div id="heroCarousel" class="carousel slide h-100">
+            <div class="carousel-inner h-100">
+              <!-- Slide 1 -->
+              <div class="carousel-item active h-100">
+                <div class="hero-card hero--cover h-100 p-4 p-md-5 rounded-4 position-relative overflow-hidden text-white">
+                  <div class="hero-content">
+                    <span class="badge text-bg-light mb-2">Cuenta de Ahorros</span>
+                    <h2 class="display-6 fw-bold mb-2">Duplica tu saldo<br>hasta 10 millones*</h2>
+                    <p class="opacity-75 mb-4">Abre tu Cuenta de Ahorros y participa.</p>
+                    <a href="#" class="btn btn-primary btn-lg rounded-pill">¡Abre tu Cuenta aquí!</a>
+                  </div>
+                  <img class="hero-img" src="/img/heroahorros.png" alt="ahorros">
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item h-100">
+                <div class="hero-card hero--cover hero--visa h-100 p-4 p-md-5 rounded-4 position-relative overflow-hidden text-white">
+                  <div class="hero-content">
+                    <span class="badge text-bg-light mb-2">Tarjeta de Crédito</span>
+                    <h2 class="display-6 fw-bold mb-2">¿Aún no eres cliente?<br>Solicita tu <span class="text-primary">Tarjeta de Crédito</span></h2>
+                    <p class="opacity-75 mb-4">Un proceso fácil, rápido y 100% en línea, exclusivo solo para nuevos clientes.</p>
+                    <a href="#" class="btn btn-primary btn-lg rounded-pill">Solicita tu Tarjeta</a>
+                  </div>
+                  <img class="hero-img" src="/img/brebbb.jpg" alt="tarjeta">
+                </div>
               </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="carousel-item h-100">
-              <div class="hero-card h-100 p-4 p-md-5 rounded-4 position-relative overflow-hidden bg-dark text-white">
-                <h2 class="display-6 fw-bold mb-2">¿Aún no eres cliente?<br>Solicita tu <span class="text-primary">Tarjeta de Crédito</span></h2>
-                <p class="opacity-75 mb-4">Un proceso fácil, rápido y 100% en línea, exclusivo solo para nuevos clientes.</p>
-                <a href="#" class="btn btn-primary btn-lg rounded-pill">Solicita tu Tarjeta</a>
-                <img class="hero-img d-none d-md-block" src="/img/TarjetaColombia.png" alt="tarjeta">
-              </div>
-            </div>
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
           </div>
-
-          <!-- Controles -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
         </div>
-      </div>
 
-      <!-- Panel derecho: Occiauto -->
-      <div class="col-lg-4">
-        <div class="card border-0 shadow-sm h-100 rounded-4 bg-dark text-white position-relative overflow-hidden occiauto-card">
-          <div class="card-body d-flex flex-column">
-            <h3 class="fw-bold">Tasas desde 1,14% M.V</h3>
-            <p class="opacity-75 mb-4">Te prestamos hasta el 100% del valor del vehículo.</p>
-            <a class="link-light fw-semibold" href="#">Simula tu crédito aquí</a>
+        <!-- Occiauto -->
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm h-100 rounded-4 bg-dark text-white position-relative overflow-hidden occiauto-card">
+            <div class="card-body d-flex flex-column">
+              <h3 class="fw-bold">Tasas desde 1,14% M.V</h3>
+              <p class="opacity-75 mb-4">Te prestamos hasta el 100% del valor del vehículo.</p>
+              <a class="link-light fw-semibold" href="#">Simula tu crédito aquí</a>
+            </div>
+            <img class="position-absolute end-0 bottom-0 opacity-50 w-50 pe-3 pb-3" src="/img/tasautos.jpg" alt="carro">
           </div>
-          <img class="position-absolute end-0 bottom-0 opacity-50 w-50 pe-3 pb-3" src="/img/tasautos.jpg" alt="carro">
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- Tabs de productos -->
+  <!-- Productos -->
   <section class="py-5" id="productos">
     <div class="container">
       <h2 class="display-6 fw-bold text-center mb-4">Encuentra el producto que necesitas en un clic</h2>
-      <ul class="nav nav-pills mb-4" id="productTabs">
-        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#destacados">Destacados</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#creditos">Créditos</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cuentas">Cuentas</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tarjetas">Tarjetas</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#inversion">Inversión</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#seguros">Seguros</button></li>
-      </ul>
+
+      <!-- ÚNICO bloque de tabs con carrusel + indicador -->
+      <div class="tabs-wrap" id="productTabsWrap">
+        <ul class="nav nav-pills product-tabs" id="productTabs" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#destacados" type="button" role="tab">Destacados</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#creditos" type="button" role="tab">Créditos</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cuentas" type="button" role="tab">Cuentas</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tarjetas" type="button" role="tab">Tarjetas</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#inversion" type="button" role="tab">Inversión</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#seguros" type="button" role="tab">Seguros</button></li>
+        </ul>
+        <span class="tabs-indicator" id="tabsIndicator"></span>
+      </div>
 
       <div class="tab-content">
         <!-- Pane 1 -->
@@ -142,7 +152,7 @@
                   <p class="text-secondary">Un crédito con una tasa y una cuota fija para ti.</p>
                   <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
                 </div>
-                <img class="product-img" src="img/MALETAA.png" alt="libre inversion"/>
+                <img class="product-img" src="/img/MALETAA.png" alt="libre inversion"/>
               </div>
             </div>
             <div class="col-md-4">
@@ -153,7 +163,7 @@
                   <p class="text-secondary">Financiamos hasta el 100% del valor para tu vehículo.</p>
                   <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
                 </div>
-                <img class="product-img" src="img/creditovehi.png" alt="vehiculos"/>
+                <img class="product-img" src="/img/creditovehi.png" alt="vehiculos"/>
               </div>
             </div>
             <div class="col-md-4">
@@ -164,12 +174,13 @@
                   <p class="text-secondary">Abre tu cuenta sin costo y disfruta de transacciones rápidas.</p>
                   <a class="btn btn-outline-primary rounded-pill" href="#">Abrir mi cuenta</a>
                 </div>
-                <img class="product-img" src="img/cuentahorros.png" alt="ahorros"/>
+                <img class="product-img" src="/img/cuentahorros.png" alt="ahorros"/>
               </div>
             </div>
           </div>
         </div>
-        <!-- Otros panes pueden reutilizar las mismas tarjetas si lo deseas -->
+
+        <!-- Otros panes -->
         <div class="tab-pane fade" id="creditos">Contenido de créditos…</div>
         <div class="tab-pane fade" id="cuentas">Contenido de cuentas…</div>
         <div class="tab-pane fade" id="tarjetas">Contenido de tarjetas…</div>
@@ -179,18 +190,18 @@
     </div>
   </section>
 
-  <!-- Banner Bre-B -->
+  <!-- Bre-B -->
   <section class="py-4">
     <div class="container">
       <div class="breb-banner rounded-4 overflow-hidden text-white position-relative p-5">
-        <h2 class="display-6 fw-bold">¿Ya conoces Bre‑B?</h2>
-        <p class="lead">Consulta aquí lo que necesites sobre Bre‑B o sobre Tag Aval.</p>
+        <h2 class="display-6 fw-bold">¿Ya conoces Bre-B?</h2>
+        <p class="lead">Consulta aquí lo que necesites sobre Bre-B o sobre Tag Aval.</p>
         <a class="btn btn-light rounded-pill" href="#">Haz tu pregunta aquí</a>
       </div>
     </div>
   </section>
 
-  <!-- Soluciones cercanas a ti -->
+  <!-- Soluciones -->
   <section class="py-5 bg-dark text-white">
     <div class="container">
       <h2 class="display-6 fw-bold text-center mb-5">Descubre nuestras soluciones <span class="text-info">cercanas a ti</span></h2>
@@ -198,14 +209,14 @@
         <div class="col-lg-6">
           <div class="solution-card rounded-4 p-4 p-md-5 h-100 bg-light text-dark">
             <h3 class="fw-bold">¿Qué quieres hacer hoy?</h3>
-            <p class="text-secondary">Encuentra el producto ideal para ti de forma rápida y sencilla. Te guiamos paso a paso para que encuentres la opción que mejor se ajuste a tus necesidades.</p>
+            <p class="text-secondary">Encuentra el producto ideal para ti de forma rápida y sencilla.</p>
             <a class="btn btn-dark rounded-pill" href="#">Hazlo aquí</a>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="solution-card rounded-4 p-4 p-md-5 h-100 bg-success-subtle">
             <h3 class="fw-bold">¿Buscas una oficina cerca de ti?</h3>
-            <p class="text-dark-50">Encuentra la sucursal de Banco de Occidente más cercana y accede a todos nuestros servicios.</p>
+            <p class="text-dark-50">Encuentra la sucursal más cercana.</p>
             <a class="btn btn-dark rounded-pill" href="#">Busca aquí</a>
           </div>
         </div>
@@ -224,7 +235,7 @@
             <div class="card-body">
               <span class="badge bg-primary-subtle text-primary-emphasis">Te puede interesar</span>
               <h3 class="h3 fw-bold mt-2">Únete a nosotros</h3>
-              <p class="text-secondary">Crece profesionalmente con nosotros. Descubre oportunidades en un equipo dinámico y comprometido.</p>
+              <p class="text-secondary">Crece profesionalmente con nosotros.</p>
               <a class="btn btn-outline-primary rounded-pill" href="#">Conoce más</a>
             </div>
           </div>
@@ -235,7 +246,7 @@
             <div class="card-body">
               <span class="badge bg-primary-subtle text-primary-emphasis">Te puede interesar</span>
               <h3 class="h3 fw-bold mt-2">Segmento Aval</h3>
-              <p class="text-secondary">Si eres parte del Segmento Aval, disfruta ventajas y servicios especiales diseñados para ti.</p>
+              <p class="text-secondary">Ventajas y servicios especiales.</p>
               <a class="btn btn-outline-primary rounded-pill" href="#">Conoce más</a>
             </div>
           </div>
@@ -246,7 +257,7 @@
             <div class="card-body">
               <span class="badge bg-primary-subtle text-primary-emphasis">Te puede interesar</span>
               <h3 class="h3 fw-bold mt-2">Defensor del Consumidor Financiero</h3>
-              <p class="text-secondary">Accede a información sobre cómo protege derechos y cómo comunicarte con el Defensor Consumidor Financiero.</p>
+              <p class="text-secondary">Cómo protege tus derechos y cómo contactarlo.</p>
               <a class="btn btn-outline-primary rounded-pill" href="#">Conoce más</a>
             </div>
           </div>
@@ -264,7 +275,7 @@
             <i class="bi bi-emoji-smile fs-3"></i>
             <div>
               <h6 class="fw-bold">¿Necesitas asesoría?</h6>
-              <p class="small opacity-75 mb-1">Resolvemos tus dudas y te ayudamos a elegir producto.</p>
+              <p class="small mb-1">Resolvemos tus dudas y te ayudamos a elegir producto.</p>
               <a class="link-light small fw-semibold" href="#">Solicita tu asesoría</a>
             </div>
           </div>
@@ -274,7 +285,7 @@
             <i class="bi bi-patch-question fs-3"></i>
             <div>
               <h6 class="fw-bold">¿Tienes preguntas?</h6>
-              <p class="small opacity-75 mb-1">Tenemos una respuesta para cada una de ellas.</p>
+              <p class="small mb-1">Tenemos una respuesta para cada una de ellas.</p>
               <a class="link-light small fw-semibold" href="#">Preguntas frecuentes</a>
             </div>
           </div>
@@ -284,7 +295,7 @@
             <i class="bi bi-telephone fs-3"></i>
             <div>
               <h6 class="fw-bold">Llámanos</h6>
-              <p class="small opacity-75 mb-1">Para asistencia inmediata, comunícate con nosotros.</p>
+              <p class="small mb-1">Para asistencia inmediata, comunícate con nosotros.</p>
               <a class="link-light small fw-semibold" href="#">Líneas de atención</a>
             </div>
           </div>
@@ -294,7 +305,7 @@
             <i class="bi bi-chat-dots fs-3"></i>
             <div>
               <h6 class="fw-bold">¿Tienes una solicitud o reclamo?</h6>
-              <p class="small opacity-75 mb-1">Gestiona tus solicitudes de manera rápida y sencilla.</p>
+              <p class="small mb-1">Gestiona tus solicitudes de manera rápida y sencilla.</p>
               <a class="link-light small fw-semibold" href="#">Envía tu solicitud</a>
             </div>
           </div>
@@ -311,7 +322,7 @@
 
       <hr class="border-secondary opacity-25">
 
-      <div class="row small opacity-75">
+      <div class="row small">
         <div class="col-md-8 d-flex flex-wrap gap-3">
           <a class="link-light" href="#">Legal y políticas</a>
           <a class="link-light" href="#">Tarifas del 2025</a>
@@ -326,5 +337,47 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // ===== Indicador deslizante + centrado del tab activo =====
+  (function () {
+    const wrap = document.getElementById('productTabsWrap');
+    const tabs = document.getElementById('productTabs');
+    const indicator = document.getElementById('tabsIndicator');
+
+    function setIndicator(el){
+      if(!el) return;
+      const wrapRect = wrap.getBoundingClientRect();
+      const elRect   = el.getBoundingClientRect();
+      const left = (elRect.left - wrapRect.left) + wrap.scrollLeft;
+
+      indicator.style.width = elRect.width + 'px';
+      indicator.style.left  = left + 'px';
+    }
+    function centerActive(el){
+      const target = el || tabs.querySelector('.nav-link.active');
+      if(!target) return;
+      const left = target.offsetLeft + target.offsetWidth/2 - wrap.clientWidth/2;
+      const max  = tabs.scrollWidth - wrap.clientWidth;
+      const to   = Math.max(0, Math.min(left, max));
+      wrap.scrollTo({ left: to, behavior: 'smooth' });
+    }
+
+    window.addEventListener('load', () => {
+      setIndicator(tabs.querySelector('.nav-link.active'));
+      centerActive();
+    });
+    document.addEventListener('shown.bs.tab', (e) => {
+      const el = e.target;
+      setIndicator(el);
+      centerActive(el);
+    });
+    window.addEventListener('resize', () => {
+      setIndicator(tabs.querySelector('.nav-link.active'));
+    });
+    wrap.addEventListener('scroll', () => {
+      setIndicator(tabs.querySelector('.nav-link.active'));
+    });
+  })();
+  </script>
 </body>
 </html>
