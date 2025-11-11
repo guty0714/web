@@ -132,6 +132,48 @@ body, .bg-primary a {
   font-weight: 500;
 }
 
+/* === Subnavbar inferior (Cuentas, Tarjeta de Crédito, etc.) === */
+.subnavbar {
+  background-color: #ffffff;
+  height: 49px;
+  display: flex;
+  align-items: center;
+}
+
+.subnavbar .container {
+  max-width: 1140px;
+}
+
+.subnav-link {
+  color: #212529;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;  
+  padding: 0.25rem 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.subnav-link:hover {
+  color: var(--oc-blue);
+}
+
+/* Botón Ingresar (navbar) más alto y centrado */
+.navbar .btn-primary{
+  padding: 0.55rem 1.9rem;   /* ↑ vertical, → horizontal  */
+  font-size: 0.95rem;
+  border-radius: 999px;      /* pastilla bien redonda */
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;              /* espacio entre icono y texto */
+}
+
+/* Icono dentro del botón Ingresar */
+.navbar .btn-primary i{
+  font-size: 1.15rem;        /* un poco más grande */
+  position: relative;
+  top: -1px;                 /* lo baja/centra visualmente */
+}
+
 /* Hero */
 /* --- HERO --- */
 .hero-card {
@@ -172,6 +214,8 @@ body, .bg-primary a {
   z-index: 1;                 /* textos y botón por encima */
 }
 
+
+
 /* Imagen del panel derecho (OcciautO) */
 .card.bg-dark.text-white.position-relative.overflow-hidden
   > img.position-absolute.end-0.bottom-0{
@@ -209,10 +253,201 @@ body, .bg-primary a {
   position: relative;
   z-index: 2;
 }
-/* Product cards */
-.product-card{ background:#eef7ff; border:0; position:relative; overflow:hidden; }
-.product-card .product-img{ position:absolute; right:-1rem; bottom:-1rem; width:55%; opacity:.95; }
-.product-card .card-body{ padding-bottom:6rem; }
+
+/* Ajustes de layout para la tarjeta de Occiauto */
+.occiauto-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   /* empuja el contenido un poco hacia abajo */
+  padding: 4rem 2.5rem 3rem;   /* ↑ top, → lados, ↓ bottom (más aire arriba y abajo) */
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+/* Título un poco más protagonista y con margen */
+.occiauto-card h3{
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+/* Texto de párrafo con un poco más de espacio antes del link */
+.occiauto-card p{
+  margin-bottom: 1.8rem;
+}
+
+/* Limita el ancho del texto en la tarjeta Occiauto */
+.occiauto-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   /* empuja el contenido un poco hacia abajo */
+  padding: 4rem 2.5rem 1.4rem;   /* ↑ top, → lados, ↓ bottom (más aire arriba y abajo) */
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+/* Corrige altura del carrusel */
+#heroCarousel,
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+  height: 100%;
+}
+
+/* Ajusta los botones del carrusel */
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  width: 4rem;
+  color: #000;
+  opacity: 0.8;
+}
+
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+/* Armoniza el estilo entre slides */
+#heroCarousel .hero-card {
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Evita que las imágenes se desborden */
+#heroCarousel .hero-img {
+  object-fit: cover;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.product-card {
+  background: #f7fbff;                 /* antes #f4f8ff */
+  border: 1px solid #e2ecff;           /* borde más claro */
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+
+/* Imagen del producto */
+.product-card .product-img {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  width: 45%;
+  height: auto;
+  object-fit: contain;
+}
+
+.product-card .card-body {
+  position: relative;
+  z-index: 1;
+  padding: 1.8rem 1rem 4rem;  /* top, lados, bottom */
+  max-width: 60%;              /* acorta el ancho del texto como en el original */
+}
+
+.product-card .badge {
+  background-color: #eaf7ff;  /* antes #dff4ff, demasiado saturado */
+  color: #0075c9;             /* azul más suave */
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* Título */
+.product-card h3 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: #111;
+}
+
+/* Descripción */
+.product-card p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón */
+.product-card .btn {
+  border: 2px solid #0066ff;
+  color: #0066ff;
+  font-weight: 600;
+  padding: 0.6rem 1.6rem;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.product-card .btn:hover {
+  background: #0066ff;
+  color: #fff;
+  border-color: #0066ff;
+}
+/* Contenedor de tabs */
+#productTabs {
+  display: flex;
+  justify-content: space-between;   /* separa los tabs, como el original */
+  width: 100%;                      /* ocupa todo el ancho del .container */
+  margin: 0 auto 2.8rem;            /* centrado y un poco más abajo del título */
+  border-bottom: 1px solid #e6eaf2; /* línea gris clara como la original */
+  padding-bottom: 0.65rem;
+}
+
+#productTabs .nav-link {
+  color: #222;
+  font-weight: 500;
+  font-size: 1.02rem;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.4rem 0;                /* sin padding lateral, más “limpio” */
+  position: relative;
+  transition: color 0.2s ease;
+} 
+#productTabs .nav-link:hover {
+  color: #0056b3;
+}
+
+/* Tab activo */
+#productTabs .nav-link.active {
+  color: #0056b3;
+  font-weight: 600;
+}
+
+#productTabs .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;                     /* se pega visualmente a la franja gris */
+  height: 3px;
+  background-color: #0056b3;
+  border-radius: 3px;
+}
+
+#productos {
+  background-color: #fff;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+/* Título de la sección productos: más pequeño y similar al original */
+#productos h2.display-6 {
+  font-size: 2rem;         /* un pelín más pequeño */
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  margin-bottom: 3rem;     /* más separación con los tabs */
+}
 
 /* Bre-B */
 .breb-banner{ background: url('https://picsum.photos/seed/breb/1200/500') center/cover no-repeat, linear-gradient(90deg,#111,#333); }
