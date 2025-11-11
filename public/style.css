@@ -1,0 +1,225 @@
+:root {
+  --oc-blue: #0862c5; /* azul profundo más parecido al del banco */
+  --oc-blue-dark: #0053b8;
+}
+
+body {
+  font-feature-settings: "ss01" on;
+}
+
+/* Tabs de arriba */
+.active-tab {
+  position: relative;
+  background-color: white;
+  color: var(--oc-blue) !important;
+  padding: 8px 18px;
+  border-radius: 0.25rem 0.25rem 0 0; /* bordes suaves arriba */
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--oc-blue) !important;
+  border-color: var(--oc-blue) !important;
+}
+
+/* Hover un pelín más oscuro */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--oc-blue-dark) !important;
+  border-color: var(--oc-blue-dark) !important;
+}
+
+/* eliminamos el triángulo blanco inferior */
+.active-tab::after {
+  display: none;
+}
+
+/* === Top bar: altura fija y centrado vertical === */
+.bg-primary{
+  --topbar-h: 44px;                           /* alto del header */
+  background-color: var(--oc-blue) !important;
+}
+
+/* Tamaño más pequeño y alineación más precisa para los íconos */
+.bg-primary i {
+  font-size: 0.85rem !important;   /* antes 1rem */
+  position: relative;
+  top: -0.5px;                     /* corrige leve desalineación vertical */
+  margin-right: 0.25rem;           /* deja un pequeño espacio del texto */
+}
+
+.bg-primary .container{
+  height: var(--topbar-h);
+  padding-top: 0 !important;                  /* anula py-1 del HTML */
+  padding-bottom: 0 !important;
+  display: flex;
+  align-items: stretch;                        /* estira los hijos al 100% */
+}
+
+/* Enlaces del top bar ocupan toda la altura y centran el texto */
+.bg-primary .container > a{
+  display: flex;
+  align-items: center;                         /* centra verticalmente */
+  height: 100%;                                /* llena el alto del header */
+  padding: 0 16px;                             /* solo ancho */
+  text-decoration: none;
+}
+
+/* Pestaña activa: fondo blanco a TODO el alto */
+.bg-primary .active-tab{
+  background: #fff;
+  color: var(--oc-blue) !important;
+  border-radius: 8px 8px 0 0;
+  box-shadow: none;
+}
+
+/* Opcional: sutil línea blanca inferior como separador */
+.bg-primary .active-tab{ box-shadow: inset 0 -2px 0 #fff; }
+
+/* Hover de links inactivos */
+.bg-primary .text-white-50:hover{ color:#fff !important; }
+
+/* Tabs inactivos */
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.text-white-50:hover {
+  color: #fff !important;
+}
+
+/* Fuente y peso similares al original */
+body, .bg-primary a {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 500; /* más ligero, menos "bold" */
+}
+
+/* Enlaces del bloque derecho (quienes somos, etc) */
+.bg-primary .ms-auto a i{ margin-right:.35rem; font-size:1rem; position:relative; top:.5px; }
+
+/* Ligero ajuste del color de texto */
+.bg-primary .ms-auto a {
+  color: rgba(255,255,255,0.92) !important;
+}
+
+.bg-primary .ms-auto a:hover {
+  color: #fff !important;
+}
+
+/* Para mantener la franja visualmente centrada */
+.bg-primary .container {
+  align-items: center !important;
+}
+
+
+
+/* Para mantener consistencia visual con el header original */
+.container.d-flex.gap-3.py-1.fw-semibold a {
+  letter-spacing: 0.2px;
+  font-size: 0.90rem;
+}
+
+/* Posición del menú: un poco más hacia la derecha */
+.navbar .navbar-nav {
+  margin-left: 15rem;   /* empuja todo el bloque hacia la derecha */
+  margin-right: auto;  /* mantiene el botón pegado a la derecha */
+}
+
+/* Tamaño de letra del menú (igual o muy parecido al original) */
+.navbar .nav-link {
+  font-size: 0.95rem;      /* más pequeño que el 1rem por defecto */
+  padding-inline: 1.3rem;  /* un poco menos de separación que 1.6rem */
+  font-weight: 500;
+}
+
+/* Hero */
+/* --- HERO --- */
+.hero-card {
+  background: linear-gradient(135deg, #e8f1ff, #cfe6ff);
+  min-height: 22rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen del panel izquierdo (Cuenta de Ahorros) */
+.hero-card .hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  object-fit: cover;
+  filter: drop-shadow(0 1rem 1.25rem rgba(0, 0, 0, 0.15));
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+/* ===== HERO IZQUIERDA – imagen a fondo sin tapar el texto ===== */
+.hero-card{
+  /* Reserva lateral para el texto (ajusta 42–50% a gusto) */
+  padding-right: 46% !important;
+}
+
+.hero-card .hero-img{
+  z-index: 0;                 /* por debajo del contenido */
+  pointer-events: none;       /* no bloquea clicks */
+}
+
+.hero-card > *:not(img){
+  position: relative;
+  z-index: 1;                 /* textos y botón por encima */
+}
+
+/* Imagen del panel derecho (OcciautO) */
+.card.bg-dark.text-white.position-relative.overflow-hidden
+  > img.position-absolute.end-0.bottom-0{
+  left: 0;                         /* además de right:0 y bottom:0 que ya tenía */
+  top: 0;
+  width: 100% !important;          /* ignora w-50 de Bootstrap */
+  height: 100%;
+  object-fit: cover;
+  padding: 0 !important;           /* ignora pe-3 pb-3 */
+  opacity: 1;                      /* la veladura la haremos con ::before */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Capa de veladura/degradado (sin tocar HTML) */
+.card.bg-dark.text-white.position-relative.overflow-hidden::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(15, 35, 60, 0.9) 0%,      /* azul grisáceo oscuro en la base */
+      rgba(20, 45, 80, 0.6) 35%,     /* más suave hacia el centro */
+      rgba(35, 70, 110, 0.3) 70%,    /* muy leve arriba */
+      rgba(40, 80, 120, 0) 100%      /* totalmente transparente arriba */
+    );
+  z-index:1;
+  pointer-events:none;
+}
+    
+
+/* El texto encima del degradado */
+.card.bg-dark.text-white.position-relative.overflow-hidden .card-body{
+  position: relative;
+  z-index: 2;
+}
+/* Product cards */
+.product-card{ background:#eef7ff; border:0; position:relative; overflow:hidden; }
+.product-card .product-img{ position:absolute; right:-1rem; bottom:-1rem; width:55%; opacity:.95; }
+.product-card .card-body{ padding-bottom:6rem; }
+
+/* Bre-B */
+.breb-banner{ background: url('https://picsum.photos/seed/breb/1200/500') center/cover no-repeat, linear-gradient(90deg,#111,#333); }
+
+/* Footer */
+.footer{ background:#2f3134; }
+.footer a{ text-decoration:none; }
+
+/* Utilidades pequeñas */
+.rounded-4{ border-radius:1rem; }

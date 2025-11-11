@@ -1,0 +1,21 @@
+{
+  "name": "bancooccidente",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "hbs": "^4.2.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.10"
+  }
+}

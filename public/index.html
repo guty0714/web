@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Banco de Occidente – Maqueta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Top tabs Personas/Empresas -->
+  <div class="bg-primary text-white small">
+    <div class="container d-flex gap-3 py-1 fw-semibold">
+      <a class="text-white text-decoration-none active-tab" href="#">Personas</a>
+      <a class="text-white-50 text-decoration-none" href="#">Empresas</a>
+      <div class="ms-auto d-none d-md-flex gap-4">
+        <a class="text-white text-decoration-none" href="#">Quiénes Somos</a>
+        <a class="text-white text-decoration-none" href="#">Transparencia</a>
+        <a class="text-white text-decoration-none" href="#">Sostenibilidad</a>
+        <a class="text-white text-decoration-none" href="#"><i class="bi bi-question-circle"></i> Ayuda y asesoría</a>
+        <a class="text-white text-decoration-none" href="#"><i class="bi bi-geo-alt"></i> Encuéntranos</a>
+        <a class="text-white text-decoration-none" href="#"><i class="bi bi-search"></i> Buscar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar principal -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/img/bancodeoccidenteicon.png" class="rounded" alt="logo" width="250" height="90">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#cuentas">Canales digitales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tarjetas">Segmentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#creditos">Mesa de dinero</a></li>
+          <li class="nav-item"><a class="nav-link" href="#seguros">Haz tus pagos</a></li>
+        </ul>
+        <a class="btn btn-primary rounded-pill px-4 fw-semibold" href="#"><i class="bi bi-person-circle me-1"></i>Ingresar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero: dos paneles -->
+  <section class="py-4 bg-light border-bottom">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-8">
+          <div class="hero-card h-100 p-4 p-md-5 rounded-4 position-relative overflow-hidden">
+            <span class="badge text-bg-light mb-2">Cuenta de Ahorros</span>
+            <h2 class="display-6 fw-bold mb-2">Duplica tu saldo<br>hasta 10 millones*</h2>
+            <p class="text-secondary mb-4">Abre tu Cuenta de Ahorros y participa.</p>
+            <a href="#" class="btn btn-primary btn-lg rounded-pill">¡Abre tu Cuenta aquí!</a>
+            <img class="hero-img d-none d-md-block" src="/img/heroahorros.png" alt="ahorros">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm h-100 rounded-4 bg-dark text-white position-relative overflow-hidden">
+            <div class="card-body d-flex flex-column justify-content-end">
+              <h3 class="fw-bold">Tasas desde 1,14%
+                M.V
+              </h3>
+              <p class="opacity-75 mb-4">Te prestamos hasta el 100% del valor del vehículo.</p>
+              <a class="link-light fw-semibold" href="#">Simula tu crédito aquí</a>
+            </div>
+            <img class="position-absolute end-0 bottom-0 opacity-50 w-50 pe-3 pb-3" src="/img/tasautos.jpg" alt="carro">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs de productos -->
+  <section class="py-5" id="productos">
+    <div class="container">
+      <h2 class="display-6 fw-bold text-center mb-4">Encuentra el producto que necesitas en un clic</h2>
+      <ul class="nav nav-pills justify-content-center gap-2 mb-4" id="productTabs">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#destacados">Destacados</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#creditos">Créditos</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cuentas">Cuentas</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tarjetas">Tarjetas</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#inversion">Inversión</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#seguros">Seguros</button></li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- Pane 1 -->
+        <div class="tab-pane fade show active" id="destacados">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card product-card h-100 rounded-4">
+                <div class="card-body">
+                  <span class="badge bg-info-subtle text-info-emphasis">Hecho a tu medida</span>
+                  <h3 class="h3 fw-bold mt-2">Crédito de Libre Inversión</h3>
+                  <p class="text-secondary">Un crédito con una tasa y una cuota fija para ti.</p>
+                  <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
+                </div>
+                <img class="product-img" src="img/MALETAA.png" alt="libre inversion"/>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card product-card h-100 rounded-4">
+                <div class="card-body">
+                  <span class="badge bg-info-subtle text-info-emphasis">Hecho a tu medida</span>
+                  <h3 class="h3 fw-bold mt-2">Crédito de Vehículos Occiauto</h3>
+                  <p class="text-secondary">Financiamos hasta el 100% del valor para tu vehículo.</p>
+                  <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
+                </div>
+                <img class="product-img" src="https://picsum.photos/seed/auto/600/400" alt="vehiculos"/>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card product-card h-100 rounded-4">
+                <div class="card-body">
+                  <span class="badge bg-info-subtle text-info-emphasis">Hecho a tu medida</span>
+                  <h3 class="h3 fw-bold mt-2">Cuenta de Ahorros</h3>
+                  <p class="text-secondary">Abre tu cuenta sin costo y disfruta de transacciones rápidas.</p>
+                  <a class="btn btn-outline-primary rounded-pill" href="#">Abrir mi cuenta</a>
+                </div>
+                <img class="product-img" src="https://picsum.photos/seed/alcancia/600/400" alt="ahorros"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Otros panes pueden reutilizar las mismas tarjetas si lo deseas -->
+        <div class="tab-pane fade" id="creditos">Contenido de créditos…</div>
+        <div class="tab-pane fade" id="cuentas">Contenido de cuentas…</div>
+        <div class="tab-pane fade" id="tarjetas">Contenido de tarjetas…</div>
+        <div class="tab-pane fade" id="inversion">Contenido de inversión…</div>
+        <div class="tab-pane fade" id="seguros">Contenido de seguros…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Bre-B -->
+  <section class="py-4">
+    <div class="container">
+      <div class="breb-banner rounded-4 overflow-hidden text-white position-relative p-5">
+        <h2 class="display-6 fw-bold">¿Ya conoces Bre‑B?</h2>
+        <p class="lead">Consulta aquí lo que necesites sobre Bre‑B o sobre Tag Aval.</p>
+        <a class="btn btn-light rounded-pill" href="#">Haz tu pregunta aquí</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluciones cercanas a ti -->
+  <section class="py-5 bg-dark text-white">
+    <div class="container">
+      <h2 class="display-6 fw-bold text-center mb-5">Descubre nuestras soluciones <span class="text-info">cercanas a ti</span></h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="solution-card rounded-4 p-4 p-md-5 h-100 bg-light text-dark">
+            <h3 class="fw-bold">¿Qué quieres hacer hoy?</h3>
+            <p class="text-secondary">Encuentra el producto ideal para ti de forma rápida y sencilla. Te guiamos paso a paso para que encuentres la opción que mejor se ajuste a tus necesidades.</p>
+            <a class="btn btn-dark rounded-pill" href="#">Hazlo aquí</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="solution-card rounded-4 p-4 p-md-5 h-100 bg-success-subtle">
+            <h3 class="fw-bold">¿Buscas una oficina cerca de ti?</h3>
+            <p class="text-dark-50">Encuentra la sucursal de Banco de Occidente más cercana y accede a todos nuestros servicios.</p>
+            <a class="btn btn-dark rounded-pill" href="#">Busca aquí</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Novedades -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="display-6 fw-bold text-center mb-4">Descubre las novedades que hemos preparado para ti</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 rounded-4 overflow-hidden shadow-sm">
+            <img src="https://picsum.photos/seed/n1/800/480" class="card-img-top" alt="novedad">
+            <div class="card-body">
+              <span class="badge bg-primary-subtle text-primary-emphasis">Te puede interesar</span>
+              <h3 class="h3 fw-bold mt-2">Únete a nosotros</h3>
+              <p class="text-secondary">Crece profesionalmente con nosotros. Descubre oportunidades en un equipo dinámico y comprometido.</p>
+              <a class="btn btn-outline-primary rounded-pill" href="#">Conoce más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 rounded-4 overflow-hidden shadow-sm">
+            <img src="https://picsum.photos/seed/n2/800/480" class="card-img-top" alt="novedad">
+            <div class="card-body">
+              <span class="badge bg-primary-subtle text-primary-emphasis">Te puede interesar</span>
+              <h3 class="h3 fw-bold mt-2">Segmento Aval</h3>
+              <p class="text-secondary">Si eres parte del Segmento Aval, disfruta ventajas y servicios especiales diseñados para ti.</p>
+              <a class="btn btn-outline-primary rounded-pill" href="#">Conoce más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 rounded-4 overflow-hidden shadow-sm">
+            <img src="https://picsum.photos/seed/n3/800/480" class="card-img-top" alt="novedad">
+            <div class="card-body">
+              <span class="badge bg-primary-subtle text-primary-emphasis">Te puede interesar</span>
+              <h3 class="h3 fw-bold mt-2">Defensor del Consumidor Financiero</h3>
+              <p class="text-secondary">Accede a información sobre cómo protege derechos y cómo comunicarte con el Defensor Consumidor Financiero.</p>
+              <a class="btn btn-outline-primary rounded-pill" href="#">Conoce más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto pt-5 text-white">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-emoji-smile fs-3"></i>
+            <div>
+              <h6 class="fw-bold">¿Necesitas asesoría?</h6>
+              <p class="small opacity-75 mb-1">Resolvemos tus dudas y te ayudamos a elegir producto.</p>
+              <a class="link-light small fw-semibold" href="#">Solicita tu asesoría</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-patch-question fs-3"></i>
+            <div>
+              <h6 class="fw-bold">¿Tienes preguntas?</h6>
+              <p class="small opacity-75 mb-1">Tenemos una respuesta para cada una de ellas.</p>
+              <a class="link-light small fw-semibold" href="#">Preguntas frecuentes</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-telephone fs-3"></i>
+            <div>
+              <h6 class="fw-bold">Llámanos</h6>
+              <p class="small opacity-75 mb-1">Para asistencia inmediata, comunícate con nosotros.</p>
+              <a class="link-light small fw-semibold" href="#">Líneas de atención</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-chat-dots fs-3"></i>
+            <div>
+              <h6 class="fw-bold">¿Tienes una solicitud o reclamo?</h6>
+              <p class="small opacity-75 mb-1">Gestiona tus solicitudes de manera rápida y sencilla.</p>
+              <a class="link-light small fw-semibold" href="#">Envía tu solicitud</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex gap-3 fs-4 pb-4">
+        <a class="text-white-50" href="#"><i class="bi bi-youtube"></i></a>
+        <a class="text-white-50" href="#"><i class="bi bi-linkedin"></i></a>
+        <a class="text-white-50" href="#"><i class="bi bi-twitter-x"></i></a>
+        <a class="text-white-50" href="#"><i class="bi bi-facebook"></i></a>
+        <a class="text-white-50" href="#"><i class="bi bi-instagram"></i></a>
+      </div>
+
+      <hr class="border-secondary opacity-25">
+
+      <div class="row small opacity-75">
+        <div class="col-md-8 d-flex flex-wrap gap-3">
+          <a class="link-light" href="#">Legal y políticas</a>
+          <a class="link-light" href="#">Tarifas del 2025</a>
+          <a class="link-light" href="#">Licitación Banca Seguros</a>
+          <a class="link-light" href="#">Haz tus pagos</a>
+          <a class="link-light" href="#">Línea ética</a>
+          <a class="link-light" href="#">Mapa del Sitio</a>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">© Banco de Occidente – Todos los derechos reservados</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
