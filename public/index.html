@@ -123,72 +123,73 @@
   </section>
 
   <!-- Productos -->
-  <section class="py-5" id="productos">
-    <div class="container">
-      <h2 class="display-6 fw-bold text-center mb-4">Encuentra el producto que necesitas en un clic</h2>
+<section class="py-5" id="productos">
+  <div class="container">
+    <h2 class="display-6 fw-bold text-center mb-4">Encuentra el producto que necesitas en un clic</h2>
 
-      <!-- ÚNICO bloque de tabs con carrusel + indicador -->
-      <div class="tabs-wrap" id="productTabsWrap">
-        <ul class="nav nav-pills product-tabs" id="productTabs" role="tablist">
-          <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#destacados" type="button" role="tab">Destacados</button></li>
-          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#creditos" type="button" role="tab">Créditos</button></li>
-          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cuentas" type="button" role="tab">Cuentas</button></li>
-          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tarjetas" type="button" role="tab">Tarjetas</button></li>
-          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#inversion" type="button" role="tab">Inversión</button></li>
-          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#seguros" type="button" role="tab">Seguros</button></li>
-        </ul>
-        <span class="tabs-indicator" id="tabsIndicator"></span>
-      </div>
+    <!-- Tabs -->
+    <div class="tabs-wrap" id="productTabsWrap">
+      <ul class="nav nav-pills product-tabs" id="productTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#destacados" type="button">Destacados</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#creditos" type="button">Créditos</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cuentas" type="button">Cuentas</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tarjetas" type="button">Tarjetas</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#inversion" type="button">Inversión</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#seguros" type="button">Seguros</button></li>
+      </ul>
+      <span class="tabs-indicator" id="tabsIndicator"></span>
+    </div>
 
-      <div class="tab-content">
-        <!-- Pane 1 -->
-        <div class="tab-pane fade show active" id="destacados">
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="card product-card h-100 rounded-4">
-                <div class="card-body">
-                  <span class="badge bg-info-subtle text-info-emphasis">Hecho a tu medida</span>
-                  <h3 class="h3 fw-bold mt-2">Crédito de Libre Inversión</h3>
-                  <p class="text-secondary">Un crédito con una tasa y una cuota fija para ti.</p>
-                  <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
-                </div>
-                <img class="product-img" src="/img/MALETAA.png" alt="libre inversion"/>
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="destacados">
+        <!-- 👇 Grid 1–col (xs) / 2–col (md) / 3–col (lg) -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 row-cards">
+          <div class="col">
+            <div class="card product-card h-100 rounded-4">
+              <div class="card-body">
+                <span class="pill-badge">Hecho a tu medida</span>
+                <h3 class="h3 fw-bold mt-2">Crédito de Libre Inversión</h3>
+                <p class="text-secondary">Un crédito con una tasa y una cuota fija para ti.</p>
+                <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
               </div>
+              <img class="product-img" src="/img/MALETAA.png" alt="libre inversion">
             </div>
-            <div class="col-md-4">
-              <div class="card product-card h-100 rounded-4">
-                <div class="card-body">
-                  <span class="badge bg-info-subtle text-info-emphasis">Hecho a tu medida</span>
-                  <h3 class="h3 fw-bold mt-2">Crédito de Vehículos Occiauto</h3>
-                  <p class="text-secondary">Financiamos hasta el 100% del valor para tu vehículo.</p>
-                  <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
-                </div>
-                <img class="product-img" src="/img/creditovehi.png" alt="vehiculos"/>
+          </div>
+
+          <div class="col">
+            <div class="card product-card h-100 rounded-4">
+              <div class="card-body">
+                <span class="pill-badge">Hecho a tu medida</span>
+                <h3 class="h3 fw-bold mt-2">Crédito de Vehículos Occiauto</h3>
+                <p class="text-secondary">Financiamos hasta el 100% del valor para tu vehículo.</p>
+                <a class="btn btn-outline-primary rounded-pill" href="#">Solicítalo aquí</a>
               </div>
+              <img class="product-img" src="/img/creditovehi.png" alt="vehiculos">
             </div>
-            <div class="col-md-4">
-              <div class="card product-card h-100 rounded-4">
-                <div class="card-body">
-                  <span class="badge bg-info-subtle text-info-emphasis">Hecho a tu medida</span>
-                  <h3 class="h3 fw-bold mt-2">Cuenta de Ahorros</h3>
-                  <p class="text-secondary">Abre tu cuenta sin costo y disfruta de transacciones rápidas.</p>
-                  <a class="btn btn-outline-primary rounded-pill" href="#">Abrir mi cuenta</a>
-                </div>
-                <img class="product-img" src="/img/cuentahorros.png" alt="ahorros"/>
+          </div>
+
+          <div class="col">
+            <div class="card product-card h-100 rounded-4">
+              <div class="card-body">
+                <span class="pill-badge">Hecho a tu medida</span>
+                <h3 class="h3 fw-bold mt-2">Cuenta de Ahorros</h3>
+                <p class="text-secondary">Abre tu cuenta sin costo y disfruta de transacciones rápidas.</p>
+                <a class="btn btn-outline-primary rounded-pill" href="#">Abrir mi cuenta</a>
               </div>
+              <img class="product-img" src="/img/cuentahorros.png" alt="ahorros">
             </div>
           </div>
         </div>
-
-        <!-- Otros panes -->
-        <div class="tab-pane fade" id="creditos">Contenido de créditos…</div>
-        <div class="tab-pane fade" id="cuentas">Contenido de cuentas…</div>
-        <div class="tab-pane fade" id="tarjetas">Contenido de tarjetas…</div>
-        <div class="tab-pane fade" id="inversion">Contenido de inversión…</div>
-        <div class="tab-pane fade" id="seguros">Contenido de seguros…</div>
       </div>
+
+      <div class="tab-pane fade" id="creditos">Contenido de créditos…</div>
+      <div class="tab-pane fade" id="cuentas">Contenido de cuentas…</div>
+      <div class="tab-pane fade" id="tarjetas">Contenido de tarjetas…</div>
+      <div class="tab-pane fade" id="inversion">Contenido de inversión…</div>
+      <div class="tab-pane fade" id="seguros">Contenido de seguros…</div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Bre-B -->
   <section class="py-4">

@@ -240,4 +240,40 @@ body{ font-feature-settings:"ss01" on; font-family:'Open Sans', Arial, sans-seri
   box-shadow: inset 0 0 0 2px rgba(10,88,202,0.06); /* sutil “resalte” */
   line-height: 1;                           /* altura compacta */
 }
-.product-card { background: #EAF5FF !important; }  /* azul claro de la referencia */
+/* --- Arreglo duro del grid de tarjetas en desktop --- */
+#productos .row-cards{
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* columnas por breakpoint, ignorando cualquier override previo */
+@media (min-width: 992px){        /* ≥ LG: 3 columnas */
+  #productos .row-cards > *{
+    flex: 0 0 auto !important;
+    width: 33.3333% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px){  /* MD: 2 columnas */
+  #productos .row-cards > *{
+    flex: 0 0 auto !important;
+    width: 50% !important;
+  }
+}
+@media (max-width: 767.98px){     /* XS/SM: 1 columna */
+  #productos .row-cards > *{
+    flex: 0 0 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Asegura que las tarjetas no se estiren raras */
+#productos .product-card{ height: 100%; }
+
+/* Si alguna regla global puso .row como block, neutralízala aquí */
+#productos .row{ display:flex !important; flex-wrap:wrap !important; }
+
+/* Por si algún reset puso width:100% a todas las .col */
+#productos .col{ flex:0 0 auto !important; }
+
+/* Un poco de aire respecto a la barra de tabs para que no se pegue */
+#productos .row-cards{ margin-top: 1.25rem; }
